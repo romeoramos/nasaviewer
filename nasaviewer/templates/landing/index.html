@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+    {% block title%} Asteroid Viewer {% endblock %}
+    {% block content%}
+        {% for asteroid in asteroids.items %}
+            {{asteroids}}
+        {% endfor %}
+    {% endblock %}
