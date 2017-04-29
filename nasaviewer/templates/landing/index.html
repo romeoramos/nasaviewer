@@ -1,7 +1,14 @@
 {% extends "base.html" %}
     {% block title%} Asteroid Viewer {% endblock %}
     {% block content%}
-        {% for asteroid in asteroids.items %}
-            {{asteroids}}
+        {% for key,value in asteroids.items %}
+            {% for key,value in asteroids.near_earth_objects.items %}
+                {% for ast in value %}
+                    <div class="">
+                        {{ast.name}}
+                        {{ast.estimated_diameter_min}}
+                    </div>
+                {% endfor %}
+            {% endfor %}
         {% endfor %}
     {% endblock %}
