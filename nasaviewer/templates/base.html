@@ -9,10 +9,11 @@
     <body>
         <nav>
           <div class="nav-wrapper">
-            <a href="{% url 'landing:index' %}" class="brand-logo">Nasa Asteroid Viewer</a>
+              <img src="https://spacegrant.arizona.edu/sites/spacegrant.arizona.edu/files/about/logos/niw_print1500x1247ppi.png" alt="Nasa Logo" height="42" width="50">
+            <a href="{% url 'landing:index' %}" class="brand-logo">NASA Asteroid Viewer</a>
           </div>
         </nav>
-        
+
         {% block content %}
         {% endblock %}
 

@@ -1,14 +1,19 @@
 {% extends "base.html" %}
     {% block title%} Asteroid Viewer {% endblock %}
     {% block content%}
-        {% for key,value in asteroids.items %}
-            {% for key,value in asteroids.near_earth_objects.items %}
-                {% for ast in value %}
-                    <div class="">
-                        {{ast.name}}
-                        {{ast.estimated_diameter_min}}
-                    </div>
-                {% endfor %}
+            <h1>Asteroids approaching Earth on {{yesterday}}</h1>
+            {% for asteroid in asteroids %}
+                <div class="collection">
+                    <a href="{{asteroid.nasa_jpl_url}}" class="collection-item">
+                        {% if asteroid.is_potentially_hazardous_asteroid %}
+                            <span class="new badge red">Potentially Hazardous!</span>
+                        {% endif %}
+                        {{asteroid.name}}<br>
+                        Min. Estimated Diameter: {{asteroid.estimated_diameter.kilometers.estimated_diameter_min}} km <br>
+                        Min. Estimated Diameter: {{asteroid.estimated_diameter.kilometers.estimated_diameter_max}} km
+                    </a>
+                </div>
+
             {% endfor %}
-        {% endfor %}
+
     {% endblock %}
