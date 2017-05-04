@@ -1,7 +1,7 @@
 {% extends "base.html" %}
     {% block title%} Asteroid Viewer {% endblock %}
     {% block content%}
-            <h1>Asteroids approaching Earth on {{yesterday}}</h1>
+            <h1>Asteroids approaching Earth on {{yesterdayc}}</h1>
             {% for asteroid in asteroids %}
                 <div class="collection">
                     <a href="{{asteroid.nasa_jpl_url}}" class="collection-item">
